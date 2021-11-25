@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "sqlite3": "^5.0.2"
   },
   "name": "projeto-final-modulo4-resilia",
   "description": "Neste módulo o desafio do projeto final proposto ao grupo é criar uma API Rest completa sobre o tema determinado, cada participante fica responsável por uma determinada entidade. Em grupos utilizamos as habilidades de SoftSkills, realizamos sprints para decidir cada parte do projeto e padronização do mesmo, assim como as entidades que cada participante do grupo ficaria responsável. Neste caso, fiquei responsável pela entidade USUÁRIO.",
