@@ -9,7 +9,7 @@ const usuario = require('./Controller/usuarioController')
 const principal = require('./Controller/principalController')
 
 //Importa o Banco de dados SQLite
-const bd = require('./Infra/database')
+const bd = require('./Infra/sqlite-db')
 
 //Utilizando Middlewares
 app.use(express.json())
@@ -21,4 +21,6 @@ app.use(cors())
 
 //Rotas
 usuario(app,bd)
-principal(app,bd)
+// principal(app,bd)
+
+module.exports = app

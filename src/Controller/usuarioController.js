@@ -4,7 +4,8 @@ const UsuarioDAO = require('../DAO/UsuarioDAO')
 const usuario = (app,bd) => {
     const novoUsuarioDAO = new UsuarioDAO(bd)
 
-    app.get('/usuario', (req, res) => {
+    app.get('/usuarios', (req, res) => {
+        console.log('get funcionando')
 
         novoUsuarioDAO.pegaTodosUsers()
         .then((resposta) => {

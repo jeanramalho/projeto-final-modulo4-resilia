@@ -12,26 +12,28 @@ class Usuario {
 
         this.nome = nome
         this.telefone = telefone
-        this.email = this._verificaEmail(email)
+        this.email = email
         this.endereco = endereco
-        this.senha = this._verificaSenha(senha)
+        this.senha = senha
     }
 
-    _verificaSenha(senha) {
-        if(senha.length <= 8) {
-            return senha
-        } else {
-            throw new Error("A Senhe precisa ter no mínimo 8 caracteres")
-        }
-    }
+    // _verificaSenha(senha) {
+    //     if(senha.length <= 8) {
+    //         return senha
+    //     } else {
+    //         throw new Error("A Senhe precisa ter no mínimo 8 caracteres")
+    //     }
+    // }
 
-    _verificaEmail(email) {
-        if(email.includes('@') === true) {
-            return email
-        } else {
-            throw new Error("O email inserido precisa ser válido")
-        }
-    }
+    // _verificaEmail(email) {
+    //     var emailVerificador = email.includes('@')
+
+    //     if(emailVerificador === true) {
+    //         return email
+    //     } else {
+    //         throw new Error("O email inserido precisa ser válido")
+    //     }
+    // }
 }
 
 module.exports = Usuario
