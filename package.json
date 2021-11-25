@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "name": "projeto-final-modulo4-resilia",
+  "description": "Neste módulo o desafio do projeto final proposto ao grupo é criar uma API Rest completa sobre o tema determinado, cada participante fica responsável por uma determinada entidade. Em grupos utilizamos as habilidades de SoftSkills, realizamos sprints para decidir cada parte do projeto e padronização do mesmo, assim como as entidades que cada participante do grupo ficaria responsável. Neste caso, fiquei responsável pela entidade USUÁRIO.",
+  "version": "1.0.0",
+  "main": "(./src/server.js)",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanramalho/projeto-final-modulo4-resilia.git"
+  },
+  "author": "jeanramalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeanramalho/projeto-final-modulo4-resilia/issues"
+  },
+  "homepage": "https://github.com/jeanramalho/projeto-final-modulo4-resilia#readme"
+}
