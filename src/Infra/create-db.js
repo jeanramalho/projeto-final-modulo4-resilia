@@ -22,7 +22,6 @@ VALUES
 `
 
 function criaTabelaUsr() {
-    console.log('tentando criar tabela')
     db.run(USUARIOS_SCHEMA, (error) => {
        if (error) console.log("Erro ao criar tabela de usuários")
     })

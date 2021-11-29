@@ -3,29 +3,35 @@ class UsuarioDAO {
         this.bd = bd
     }
  
-    getAllUsers() {
-        return new Promise((resolve, reject) => {
-            const sql = 'SELECT * FROM usuarios'
-
-            this.bd.all(sql, (error, rows) => {
-                if(error) {
-                    reject({
-                        "mensagem" : error.message,
-                        "erro" : true
-                    })
-                } else {
-                    resolve({
-                        "usuarios" : rows,
-                        "count" : rows.length,
-                        "erro" : false
-                    })
-                }
+    async getAllUsers() {
+        try {
+            return new Promise((resolve, reject) => {
+                const sql = 'SELECT * FROM usuarios'
+    
+                this.bd.all(sql, (error, rows) => {
+                    if(error) {
+                        reject({
+                            "mensagem" : error.message,
+                            "erro" : true
+                        })
+                    } else {
+                        resolve({
+                            "usuarios" : rows,
+                            "count" : rows.length,
+                            "erro" : false
+                        })
+                    }
+                })
+    
             })
-
-        })
+        } catch(error){
+            throw new Error(error.message)
+        }
+        
     }
 
-    getUserEmail(email) {
+    async getUserEmail(email) {
+       try{
         const sql = `SELECT * FROM USUARIOS WHERE EMAIL = ?`
 
         return new Promise((resolve, reject) => {
@@ -43,34 +49,18 @@ class UsuarioDAO {
                 }
             })
         })
+       } catch(error){
+            throw new Error(error.message)
+       }
+       
     }
 
-    getUserId(id) {
-        const sql = `SELECT * FROM USUARIOS WHERE ID = ?`
+    async getUserId(id) {
+        try{
+            const sql = `SELECT * FROM USUARIOS WHERE ID = ?`
 
-        return new Promise((resolve, reject) => {
-            this.bd.all(sql, id, (error, rows) => {
-                if(error) {
-                    reject({
-                        "mensagem" : error.message,
-                        "erro" : true
-                    })
-                } else {
-                    resolve({
-                        "requisicao" : rows,
-                        "erro" : false
-                    })
-                }
-            })
-        })
-    }
-
-    insereUser(novoUsuario) {
-        const sql = 'INSERT INTO USUARIOS (nome, telefone, email, endereco, senha) VALUES (?,?,?,?,?)'
-                
-        return new Promise((resolve, reject) => {
-            this.bd.run(sql, [novoUsuario.nome, novoUsuario.telefone, novoUsuario.email, novoUsuario.endereco, novoUsuario.senha], 
-                (error) => {
+            return new Promise((resolve, reject) => {
+                this.bd.all(sql, id, (error, rows) => {
                     if(error) {
                         reject({
                             "mensagem" : error.message,
@@ -78,13 +68,45 @@ class UsuarioDAO {
                         })
                     } else {
                         resolve({
-                            "requisicao" : novoUsuario,
+                            "requisicao" : rows,
                             "erro" : false
                         })
                     }
                 })
-        })
+            })
+        } catch(error) {
+            throw new Error(error.message)
+        }
+        
     }
+
+    async insereUser(novoUsuario) {
+
+        try {
+            const sql = 'INSERT INTO USUARIOS (nome, telefone, email, endereco, senha) VALUES (?,?,?,?,?)'
+                
+            return new Promise((resolve, reject) => {
+                this.bd.run(sql, [novoUsuario.nome, novoUsuario.telefone, novoUsuario.email, novoUsuario.endereco, novoUsuario.senha], 
+                    (error) => {
+                        if(error) {
+                            reject({
+                                "mensagem" : error.message,
+                                "erro" : true
+                            })
+                        } else {
+                            resolve({
+                                "requisicao" : novoUsuario,
+                                "erro" : false
+                            })
+                        }
+                    })
+            })
+        } catch(error) {
+            throw new Error(error.message)
+        }
+ 
+    }
+
 
     async deleteUser(id) {
         try {
@@ -114,6 +136,7 @@ class UsuarioDAO {
             throw new Error(error.message)
         }
     }
+    
 
     async updateUser(id, newUser){
         try {

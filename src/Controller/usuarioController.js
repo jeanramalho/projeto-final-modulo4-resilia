@@ -5,7 +5,7 @@ const usuario = (app, bd) => {
     const novoUsuarioDAO = new UsuarioDAO(bd)
 
     app.get('/usuarios', async (req, res) => {
-        console.log('get funcionando')
+        
         try {            
             const resposta = await novoUsuarioDAO.getAllUsers()
             res.json(resposta)
@@ -28,7 +28,6 @@ const usuario = (app, bd) => {
 
     app.get('/usuarioid/:id', async (req, res) => {
         const id = req.params.id
-
         try {
             const resposta = await novoUsuarioDAO.getUserId(id)
             res.json(resposta)
@@ -39,20 +38,14 @@ const usuario = (app, bd) => {
 
 
 
-    app.post('/usuario', (req, res) => {
-
-       
+    app.post('/usuario', async (req, res) => {       
         try {
             const body = req.body
             const novoUsuario = new Usuario(body.nome, body.telefone, body.email, body.endereco, body.senha)
 
-            novoUsuarioDAO.insereUser(novoUsuario)
-            .then((resposta) => {
-                res.json(resposta)
-            })
-            .catch((erro) => {
-                res.json(erro)
-            })
+            const resposta = await novoUsuarioDAO.insereUser(novoUsuario)
+            res.json(resposta)
+            
 
         } catch (error) {
             res.json({
