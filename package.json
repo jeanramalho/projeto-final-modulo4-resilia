@@ -15,7 +15,7 @@
     "supertest": "^6.1.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon ./src/server.js",
     "database": "node ./src/infra/create-db.js"
   },
