@@ -1,9 +1,12 @@
 const Usuario = require('../Models/Usuario')
 const UsuarioDAO = require('../DAO/UsuarioDAO')
 
+
+//lista de rotas utilizadas na API que realizam operções CRUD com verbos HTTP com as funções assincronas do aquivo usuariosDAO.js 
 const usuario = (app, bd) => {
     const novoUsuarioDAO = new UsuarioDAO(bd)
 
+    //get da rota usuários lista todos os usuários
     app.get('/usuarios', async (req, res) => {
         
         try {            
@@ -15,6 +18,7 @@ const usuario = (app, bd) => {
     }
     })
 
+    //get da rota usuário/:email lista somente usuarios com o email solicitado
     app.get('/usuario/:email', async (req, res) => {
         const email = req.params.email
 
@@ -26,6 +30,7 @@ const usuario = (app, bd) => {
         }
     })
 
+    //get da rota usuarioid/:id lista somente usuário com id solicitado
     app.get('/usuarioid/:id', async (req, res) => {
         const id = req.params.id
         try {
@@ -37,13 +42,13 @@ const usuario = (app, bd) => {
     })
 
 
-
+    //post da rota usuario insere novo registro de usuário no banco de dados
     app.post('/usuario', async (req, res) => {       
         try {
             const body = req.body
             const novoUsuario = new Usuario(body.nome, body.telefone, body.email, body.endereco, body.senha)
 
-            const resposta = await novoUsuarioDAO.insereUser(novoUsuario)
+            const resposta = await novoUsuarioDAO.putUser(novoUsuario)
             res.json(resposta)
             
 
@@ -56,18 +61,17 @@ const usuario = (app, bd) => {
     })
 
 
+    //put da roata usuarioup/:id atualiza usuario com id informado 
     app.put('/usuarioup/:id', async (req, res) => {
-        console.log("tentando atualizar")
         const id = req.params.id
         const body = req.body
 
         try {
-            console.log("tentando atualizar3")
+            
             const respostaGet = await novoUsuarioDAO.getUserId(id)
             const usuarioAntigo = respostaGet.requisicao[0]
 
             if(usuarioAntigo) {
-                console.log("tentando atualizar4")
                 const usuarioAtualizado = new Usuario(
                     body.nome || usuarioAntigo.NOME,
                     body.telefone || usuarioAntigo.TELEFONE,
@@ -93,6 +97,7 @@ const usuario = (app, bd) => {
     })
 
 
+    //delete da rota usuariodel/:id deleta usuario com id informado
     app.delete('/usuariodel/:id', async (req, res) => {
         const id = parseInt(req.params.id)
         try {

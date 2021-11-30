@@ -21,6 +21,6 @@ app.use(cors())
 
 //Rotas
 usuario(app,bd)
-// principal(app,bd)
+principal(app)
 
 module.exports = app

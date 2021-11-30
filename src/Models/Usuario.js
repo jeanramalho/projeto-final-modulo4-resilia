@@ -1,5 +1,6 @@
 var id = 0
 
+//Classe que modela a criação do usuario 
 class Usuario {
     constructor(nome, telefone, email, endereco, senha, array, idExistente) {
         if(array){
@@ -19,6 +20,7 @@ class Usuario {
        
     }
 
+    //Função de verificação de senha
     _verificaSenha(senha) {
         if(senha.length <= 8) {
             return senha
@@ -27,6 +29,7 @@ class Usuario {
         }
     }
 
+    //Função de verificação de email
     _verificaEmail(email) {
         var emailVerificador = email.includes('@')
 

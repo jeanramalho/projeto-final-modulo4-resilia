@@ -4,7 +4,7 @@ const caminhoArq = path.resolve(__dirname,'database.db')
 const db = new sqlite3.Database(caminhoArq)
 
 
-
+//variavel com codico sql para criação da tabela
 const USUARIOS_SCHEMA = `
 CREATE TABLE IF NOT EXISTS "USUARIOS" (
     "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,24 +15,28 @@ CREATE TABLE IF NOT EXISTS "USUARIOS" (
     "SENHA" varchar(15)
 )`
 
+//variavel com codigo sql para popular tabela com usuario teste
 const ADD_USUARIO_TESTE = `
 INSERT INTO USUARIOS (ID, NOME, TELEFONE, EMAIL, ENDERECO, SENHA)
 VALUES 
     (1, 'Teste Testando','0000-0000', 'teste@testando.com', 'Rua do teste,15', '12345678')    
 `
 
+//função que cria tabela utilizando a variavel com codigo
 function criaTabelaUsr() {
     db.run(USUARIOS_SCHEMA, (error) => {
        if (error) console.log("Erro ao criar tabela de usuários")
     })
 }
 
+//função que popula tabela utilizando a variavel com codigo
 function populaTabelaUser() {
     db.run(ADD_USUARIO_TESTE, (error)=> {
        if (error) console.log("Erro ao popular tabela de usuários")
     })
 }
 
+//ordena a execução das funções
 db.serialize(() => {
     criaTabelaUsr();
     populaTabelaUser();

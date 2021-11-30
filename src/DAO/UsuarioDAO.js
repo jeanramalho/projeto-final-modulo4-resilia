@@ -3,6 +3,9 @@ class UsuarioDAO {
         this.bd = bd
     }
  
+ //funções assincronas que realizam operações CRUD   
+
+ //Lista todos os usuarios
     async getAllUsers() {
         try {
             return new Promise((resolve, reject) => {
@@ -30,6 +33,8 @@ class UsuarioDAO {
         
     }
 
+
+    //lista somente usuário cadastrado com o email solicitado
     async getUserEmail(email) {
        try{
         const sql = `SELECT * FROM USUARIOS WHERE EMAIL = ?`
@@ -55,6 +60,8 @@ class UsuarioDAO {
        
     }
 
+
+    //lista somente usuario cadastrado com id solicitado
     async getUserId(id) {
         try{
             const sql = `SELECT * FROM USUARIOS WHERE ID = ?`
@@ -80,7 +87,8 @@ class UsuarioDAO {
         
     }
 
-    async insereUser(novoUsuario) {
+    //Insere novo usuario no banco de dados
+    async putUser(novoUsuario) {
 
         try {
             const sql = 'INSERT INTO USUARIOS (nome, telefone, email, endereco, senha) VALUES (?,?,?,?,?)'
@@ -108,6 +116,7 @@ class UsuarioDAO {
     }
 
 
+    //deleta usuario do banco de dados
     async deleteUser(id) {
         try {
             const user = await this.getUserId(id)
@@ -138,6 +147,8 @@ class UsuarioDAO {
     }
     
 
+
+    //atualiza usuario
     async updateUser(id, newUser){
         try {
             const sql = `UPDATE USUARIOS SET NOME = ?, TELEFONE = ?, EMAIL = ?, ENDERECO = ?, SENHA = ? WHERE ID = ?`
