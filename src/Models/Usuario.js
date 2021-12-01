@@ -25,7 +25,7 @@ class Usuario {
         if(senha.length <= 8) {
             return senha
         } else {
-            throw new Error("A Senhe deve conter no máximo 8 caracteres")
+            throw new Error("A Senha deve conter no máximo 8 caracteres")
         }
     }
 
