@@ -13,7 +13,7 @@ Para inicializar a API é necessário que sejam instaladas as dependencias e ini
 
 A partir de um terminal siga as instruções abaixo:
 
-Para instalar as depêndencias:
+Instale as depêndencias:
 ``` s
 npm install
 ``` 
