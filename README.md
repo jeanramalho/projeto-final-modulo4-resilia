@@ -18,7 +18,7 @@ Em seguida inicialize o banco de dados:
 ```
 npm run database
 
-```
+``` sh
 
 ## Rotas
 
@@ -47,7 +47,7 @@ Para inserção ou atualização do usuário insira o registro em formato json c
     "senha": "12345678"
 }
 
-```
+```sh
 Obs: A senha deve conter no máximo 8 caracteres.
 
 
