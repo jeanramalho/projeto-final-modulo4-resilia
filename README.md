@@ -26,6 +26,7 @@ Por fim, para inicializar o servidor utilize:
 npm start
 ```
 A API funcionará em ``` http://localhost:3003/ ```
+Utilize uma plataforma como Insomnia ou Postman para realizar as operações CRUD com verbos HTTP localmente.
 
 ## Rotas
 
