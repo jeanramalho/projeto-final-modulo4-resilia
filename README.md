@@ -9,9 +9,21 @@ O intúito do projeto é criar uma API Rest completa e utilizar o CRUD através 
 
 
 ## Inicialização da API
+Realize o clone do repositório na sua máquina executando a seguinte linha de código em um terminal:
+
+``` s
+git clone https://github.com/jeanramalho/projeto-final-modulo4-resilia.git
+```
+
+
 Após ter o repositório em sua máquina para inicializar a API é necessário que sejam instaladas as dependencias e inicializados o banco de dados e o servidor.
 
 A partir de um terminal siga as instruções abaixo:
+
+Acesse a pasta raiz do projeto:
+``` s
+cd projeto-final-modulo4-resilia
+```
 
 Instale as depêndencias:
 ``` s
