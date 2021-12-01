@@ -37,7 +37,7 @@ npm run database
 ## Informações sobre o POST e o PUT
 Para inserção ou atualização do usuário insira o registro em formato json contento o campo em letra minúscula assim como no exemplo abaixo:
 
-``` sh
+``` s
 {
     "nome": "Nome do Usuário",
     "telefone": "0000-000",
