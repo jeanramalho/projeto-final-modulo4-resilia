@@ -10,14 +10,17 @@ O intúito do projeto é criar uma API Rest completa e utilizar o CRUD através 
 
 ## Inicialização da API
 Para inicializar a API é necessário que sejam instaladas as dependencias:
-``` sh
+``` s
 npm install
-
 ``` 
 Em seguida inicialize o banco de dados:
-``` sh
+``` s
 npm run database
 ``` 
+Por fim, para inicializar o servidor utilize:
+``` s
+npm start
+```
 
 ## Rotas
 
