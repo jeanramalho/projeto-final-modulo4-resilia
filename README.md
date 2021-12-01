@@ -25,6 +25,7 @@ Por fim, para inicializar o servidor utilize:
 ``` s
 npm start
 ```
+A API funcionará em ``` http://localhost:3003/ ```
 
 ## Rotas
 
@@ -55,6 +56,14 @@ Para inserção ou atualização do usuário insira o registro em formato json c
 
 ```
 Obs: A senha deve conter no máximo 8 caracteres.
+
+## Testes
+Para tests unitários após ter inicializado o banco de dados utilize rode o seguinte comando a partir de um terminal:
+
+``` s
+npm test
+```
+
 
 
 
