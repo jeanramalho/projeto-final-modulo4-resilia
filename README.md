@@ -10,15 +10,14 @@ O intúito do projeto é criar uma API Rest completa e utilizar o CRUD através 
 
 ## Inicialização da API
 Para inicializar a API é necessário que sejam instaladas as dependencias:
-```
+``` sh
 npm install
 
-```
+``` 
 Em seguida inicialize o banco de dados:
-```
-npm run database
-
 ``` sh
+npm run database
+``` 
 
 ## Rotas
 
@@ -38,7 +37,7 @@ npm run database
 ## Informações sobre o POST e o PUT
 Para inserção ou atualização do usuário insira o registro em formato json contento o campo em letra minúscula assim como no exemplo abaixo:
 
-```
+``` sh
 {
     "nome": "Nome do Usuário",
     "telefone": "0000-000",
@@ -47,7 +46,7 @@ Para inserção ou atualização do usuário insira o registro em formato json c
     "senha": "12345678"
 }
 
-```sh
+```
 Obs: A senha deve conter no máximo 8 caracteres.
 
 
