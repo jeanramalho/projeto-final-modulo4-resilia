@@ -9,7 +9,11 @@ O intúito do projeto é criar uma API Rest completa e utilizar o CRUD através 
 
 
 ## Inicialização da API
-Para inicializar a API é necessário que sejam instaladas as dependencias:
+Para inicializar a API é necessário que sejam instaladas as dependencias e inicializados o banco de dados e o servidor.
+
+A partir de um terminal siga as instruções abaixo:
+
+Para instalar as depêndencias:
 ``` s
 npm install
 ``` 
