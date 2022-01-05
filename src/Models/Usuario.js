@@ -2,7 +2,7 @@ var id = 0
 
 //Classe que modela a criação do usuario 
 class Usuario {
-    constructor(nome, telefone, email, endereco, senha, array, idExistente) {
+    constructor(nome, telefone, email, endereco, senha, administrador, array, idExistente) {
         if(array){
             if(idExistente) {
                 this.id = idExistente
@@ -16,7 +16,7 @@ class Usuario {
         this.email = this._verificaEmail(email)
         this.endereco = endereco
         this.senha = this._verificaSenha(senha)
-        
+        this.administrador = administrador
        
     }
 

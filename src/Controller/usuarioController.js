@@ -46,7 +46,7 @@ const usuario = (app, bd) => {
     app.post('/usuario', async (req, res) => {       
         try {
             const body = req.body
-            const novoUsuario = new Usuario(body.nome, body.telefone, body.email, body.endereco, body.senha)
+            const novoUsuario = new Usuario(body.nome, body.telefone, body.email, body.endereco, body.senha, body.administrador)
 
             const resposta = await novoUsuarioDAO.putUser(novoUsuario)
             res.json(resposta)
@@ -77,7 +77,8 @@ const usuario = (app, bd) => {
                     body.telefone || usuarioAntigo.TELEFONE,
                     body.email || usuarioAntigo.EMAIL,
                     body.endereco || usuarioAntigo.ENDERECO,
-                    body.senha || usuarioAntigo.SENHA
+                    body.senha || usuarioAntigo.SENHA,
+                    body.administrador || usuarioAntigo.ADMINISTRADOR
                     ) 
 
                     const resposta = await novoUsuarioDAO.updateUser(id, usuarioAtualizado)

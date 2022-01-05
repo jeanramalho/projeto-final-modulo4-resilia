@@ -12,14 +12,15 @@ CREATE TABLE IF NOT EXISTS "USUARIOS" (
     "TELEFONE" varchar(70),
     "EMAIL" varchar(70),
     "ENDERECO" varchar(100),
-    "SENHA" varchar(15)
+    "SENHA" varchar(15),
+    "ADMINISTRADOR" varchar(7)
 )`
 
 //variavel com codigo sql para popular tabela com usuario teste
 const ADD_USUARIO_TESTE = `
-INSERT INTO USUARIOS (ID, NOME, TELEFONE, EMAIL, ENDERECO, SENHA)
+INSERT INTO USUARIOS (ID, NOME, TELEFONE, EMAIL, ENDERECO, SENHA, ADMINISTRADOR)
 VALUES 
-    (1, 'Teste Testando','0000-0000', 'teste@testando.com', 'Rua do teste,15', '12345678')    
+    (1, 'Teste Testando','0000-0000', 'teste@testando.com', 'Rua do teste,15', '12345678', 'true')    
 `
 
 //função que cria tabela utilizando a variavel com codigo

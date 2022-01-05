@@ -91,10 +91,10 @@ class UsuarioDAO {
     async putUser(novoUsuario) {
 
         try {
-            const sql = 'INSERT INTO USUARIOS (nome, telefone, email, endereco, senha) VALUES (?,?,?,?,?)'
+            const sql = 'INSERT INTO USUARIOS (nome, telefone, email, endereco, senha, administrador) VALUES (?,?,?,?,?,?)'
                 
             return new Promise((resolve, reject) => {
-                this.bd.run(sql, [novoUsuario.nome, novoUsuario.telefone, novoUsuario.email, novoUsuario.endereco, novoUsuario.senha], 
+                this.bd.run(sql, [novoUsuario.nome, novoUsuario.telefone, novoUsuario.email, novoUsuario.endereco, novoUsuario.senha, novoUsuario.administrador], 
                     (error) => {
                         if(error) {
                             reject({
