@@ -7,7 +7,7 @@
 // })
 
 const app = require('./app')
-const port = 3003
+const port = process.env.PORT || 3003
 
 // Iniciando o servidor na porta designada
 app.listen(port, ()=>{

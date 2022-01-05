@@ -28,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/jeanramalho/projeto-final-modulo4-resilia/issues"
   },
+  "engines": {"node": "16.13.0"},
   "homepage": "https://github.com/jeanramalho/projeto-final-modulo4-resilia#readme"
 }
